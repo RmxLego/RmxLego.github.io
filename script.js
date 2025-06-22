@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     chaqueta: {
       class: 'preview-chaqueta',
-      img: 'Chaqueta.png'
+      img: 'chaqueta.png'
     },
     pantalon: {
       class: 'preview-pantalon',
