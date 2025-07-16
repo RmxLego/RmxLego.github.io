@@ -60,14 +60,4 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-
-  // Animación para que el LEGO siga el scroll de la página
-  window.addEventListener('scroll', function() {
-    const container = document.getElementById('lego-persona-container');
-    if (container) {
-      // Calcula la posición deseada (puedes ajustar el factor para suavidad)
-      const offset = Math.max(80, 20 + window.scrollY * 0.2);
-      container.style.top = offset + 'px';
-    }
-  });
 });
