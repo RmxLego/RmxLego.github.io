@@ -2,52 +2,52 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Personalizador RM x LEGO</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Arma tu look RM x LEGO</h1>
-  <p>Haz clic en las prendas para agregarlas o quitarlas del outfit.</p>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo-container">
-                <img src="logo-rm.png" alt="RM Logo" class="logo">
-                <img src="logo-lego.png" alt="LEGO Logo" class="logo">
-            </div>
-        </div>
-    </header>
-  <div id="items-container">
-    <div class="item" data-item="abrigo">
-      <img src="abrigolego.png" alt="Abrigo">
-      <p>Abrigo</p>
+  <header>
+    <div class="container">
+      <div class="logo-container">
+        <img src="logo-rm.png" alt="RM Logo" class="logo">
+        <img src="logo-lego.png" alt="LEGO Logo" class="logo">
+      </div>
     </div>
-    <div class="item" data-item="chaqueta">
-      <img src="chaqueta.png" alt="Chaqueta">
-      <p>Chaqueta</p>
+  </header>
+  
+  <main class="main-content">
+    <h1>Arma tu look RM x LEGO</h1>
+    <p class="subtitle">Haz clic en las prendas para agregarlas o quitarlas del outfit.</p>
+    
+    <div id="items-container">
+      <div class="item" data-item="abrigo">
+        <img src="abrigolego.png" alt="Abrigo">
+        <p>Abrigo</p>
+      </div>
+      <div class="item" data-item="chaqueta">
+        <img src="chaqueta.png" alt="Chaqueta">
+        <p>Chaqueta</p>
+      </div>
+      <div class="item" data-item="pantalon">
+        <img src="pantalonrm.png" alt="Pantalón">
+        <p>Pantalón</p>
+      </div>
     </div>
-    <div class="item" data-item="pantalon">
-      <img src="pantalonrm.png" alt="Pantalón">
-      <p>Pantalón</p>
-    </div>
-  </div>
 
-  <h2>Vista previa de tu look</h2>
-  <div id="preview-area">
-
-  </div>
+    <h2>Vista previa de tu look</h2>
+    <div id="preview-area"></div>
+  </main>
 
   <div id="lego-persona-img-left">
-    <img src="lego carrera.png" alt="LEGO rojo" />
+    <img src="lego carrera.png" alt="LEGO rojo" class="lego-side-img">
   </div>
   <div id="lego-persona-img-right">
-    <img src="lego constructor.png" alt="LEGO verde" />
+    <img src="lego constructor.png" alt="LEGO verde" class="lego-side-img">
   </div>
 
   <footer id="lego-footer">
-    <img src="harry potter (2).png" alt="LEGO Harry Potter" />
+    <img src="harry potter (2).png" alt="LEGO Harry Potter" class="footer-img">
   </footer>
 
   <script src="script.js"></script>
