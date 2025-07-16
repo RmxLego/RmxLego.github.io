@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* Estilos generales optimizados */
 * {
   margin: 0;
   padding: 0;
@@ -7,75 +7,80 @@
 }
 
 body {
-  padding: 15px;
+  padding: 10px;
   background: linear-gradient(135deg, #7c0d0d 13%, #c16610 25%, #ccb714 45%, #4ab51c 60%, #1661a6 80%);
   text-align: center;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 header {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
   flex-wrap: wrap;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .logo {
-  height: 50px;
+  height: 40px;
   max-width: 100%;
-  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
 }
 
 .main-content {
   flex: 1;
-  max-width: 1000px;
+  max-width: 100%;
   margin: 0 auto;
   width: 100%;
-  padding: 0 15px;
+  padding: 0 10px;
+  position: relative;
+  z-index: 2;
 }
 
 h1 {
   color: #ffffff;
-  margin-bottom: 10px;
-  font-size: 1.8rem;
+  margin-bottom: 8px;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 .subtitle {
   color: #ffffff;
-  margin-bottom: 20px;
-  font-size: 1rem;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 /* Contenedor de items */
 #items-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 15px;
-  margin: 20px auto;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  margin: 15px auto;
   width: 100%;
-  max-width: 600px;
+  max-width: 400px;
 }
 
 .item {
   cursor: pointer;
   border: 2px solid #ddd;
-  padding: 12px;
+  padding: 10px;
   border-radius: 8px;
   background: white;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
 
 .item img {
@@ -87,33 +92,40 @@ h1 {
 }
 
 .item p {
-  margin-top: 8px;
+  margin-top: 6px;
   font-weight: 600;
   color: #333;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .item.selected {
   border-color: #FF0000;
   background-color: #FFF0F0;
-  box-shadow: 0 0 0 3px rgba(255,0,0,0.2);
+  box-shadow: 0 0 0 2px rgba(255,0,0,0.2);
 }
 
 /* Área de vista previa */
 h2 {
   color: white;
-  margin: 25px 0 15px;
-  font-size: 1.5rem;
+  margin: 20px 0 10px;
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+#preview-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 #preview-area {
-  margin: 20px auto;
   width: 100%;
-  max-width: 300px;
-  height: 400px;
+  max-width: 250px;
+  height: 350px;
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   position: relative;
   overflow: hidden;
 }
@@ -150,16 +162,33 @@ h2 {
 }
 
 /* Figuras LEGO laterales */
-#lego-persona-img-left, #lego-persona-img-right {
+.lego-figures {
   position: fixed;
-  z-index: 1000;
-  display: none; /* Ocultos por defecto en móviles */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
 }
 
-.lego-side-img {
-  width: 100%;
-  height: auto;
-  max-width: 200px;
+.lego-figure {
+  height: 150px;
+  width: auto;
+  opacity: 0.7;
+  position: absolute;
+  bottom: 20px;
+  display: none;
+}
+
+.lego-figure.left {
+  left: 10px;
+}
+
+.lego-figure.right {
+  right: 10px;
 }
 
 /* Footer */
@@ -167,31 +196,77 @@ h2 {
   width: 100%;
   background: #0d2235;
   text-align: center;
-  padding: 20px 0;
-  margin-top: 30px;
+  padding: 15px 0;
+  margin-top: 20px;
+  position: relative;
+  z-index: 2;
 }
 
 .footer-img {
   max-width: 100%;
-  width: min(600px, 90vw);
+  width: min(500px, 90vw);
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
 }
 
 /* Media Queries para responsive */
-@media (min-width: 768px) {
+@media (min-width: 576px) {
+  .logo {
+    height: 50px;
+  }
+  
   h1 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
   }
   
   .subtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   
   #items-container {
     grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 500px;
+  }
+  
+  .item {
+    padding: 12px;
+  }
+  
+  .item p {
+    font-size: 0.9rem;
+  }
+  
+  #preview-area {
+    height: 400px;
+    max-width: 280px;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 15px;
+  }
+  
+  .logo-container {
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+  
+  #items-container {
     gap: 20px;
+    max-width: 600px;
   }
   
   .item {
@@ -199,41 +274,47 @@ h2 {
   }
   
   #preview-area {
-    height: 500px;
+    height: 450px;
+    max-width: 300px;
   }
   
-  /* Mostrar figuras LEGO laterales en pantallas grandes */
-  #lego-persona-img-left, #lego-persona-img-right {
+  /* Mostrar figuras LEGO en tabletas y desktop */
+  .lego-figure {
     display: block;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  #lego-persona-img-left {
-    left: 20px;
-  }
-  
-  #lego-persona-img-right {
-    right: 20px;
+    height: 180px;
+    bottom: 30px;
   }
 }
 
 @media (min-width: 992px) {
-  #lego-persona-img-left {
-    left: 40px;
+  .lego-figure {
+    height: 220px;
+    bottom: 50px;
   }
   
-  #lego-persona-img-right {
-    right: 40px;
+  .lego-figure.left {
+    left: 30px;
   }
   
-  .lego-side-img {
-    max-width: 250px;
+  .lego-figure.right {
+    right: 30px;
+  }
+  
+  #preview-area {
+    height: 500px;
   }
 }
 
 @media (min-width: 1200px) {
-  .lego-side-img {
-    max-width: 300px;
+  .lego-figure {
+    height: 250px;
+  }
+  
+  .lego-figure.left {
+    left: 50px;
+  }
+  
+  .lego-figure.right {
+    right: 50px;
   }
 }
